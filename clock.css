@@ -13,8 +13,8 @@ h2 {
   margin-bottom: 0px;
   margin-left: 30px;
 }
-#hello1 , 
-  #hello2 {
+#hello1,
+#hello2 {
   font-size: 50px;
 }
 #clockbox {
@@ -22,9 +22,6 @@ h2 {
   margin-left: 21vw;
   display: grid;
   grid-template-columns: 110px 640px;
-}
-div input{
-  color
 }
 .none {
   display: none;

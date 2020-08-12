@@ -42,8 +42,8 @@ function greeting(name) {
 
 function loadName() {   
     // 1. localStorage에 사용자 
-    // 정보가  없을 때 이름을 물어보는 인풋 출현
-    // 현재 사용자 정보가 있으면 인사말을 내보냄
+    // 정보가  없을 때  input display
+    // 현재 사용자 정보가 있을 경우에 greeting 실행
     const currentU = localStorage.getItem(CU);
 
     if(currentU === null){
