@@ -13,16 +13,33 @@ h2 {
   margin-bottom: 0px;
   margin-left: 30px;
 }
-#hello1,
-#hello2 {
+#hello1 {
   font-size: 50px;
+  margin: 15px;
 }
 #clockbox {
+  text-align: center;
   margin-top: 100px;
   margin-left: 21vw;
   display: grid;
-  grid-template-columns: 110px 640px;
+  grid-template-columns: 120px 640px;
 }
 .none {
   display: none;
+}
+#namebox {
+  text-align: center;
+  border: 0px;
+  font-size: 40px;
+  height: 30px;
+  padding: 10px;
+  background-color: rgb(255, 255, 255, 0.1);
+}
+#logout {
+  background-color: rgb(255, 0, 0, 0.5);
+  border: gray;
+  font-size: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 25px;
 }
