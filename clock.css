@@ -14,7 +14,7 @@ h2 {
   margin-left: 30px;
 }
 #hello1 {
-  font-size: 50px;
+  font-size: 60px;
   margin: 15px;
 }
 #clockbox {
@@ -34,12 +34,25 @@ h2 {
   height: 30px;
   padding: 10px;
   background-color: rgb(255, 255, 255, 0.1);
+  margin: 15px;
 }
 #logout {
   background-color: rgb(255, 0, 0, 0.5);
   border: gray;
-  font-size: 15px;
+  font-size: 20px;
   padding-left: 10px;
   padding-right: 10px;
-  height: 25px;
+  height: 30px;
+  margin-left: 0px;
+}
+#todoinput {
+  font-size: 20px;
+}
+
+#todolist {
+  font-size: 20px;
+}
+.delBtn {
+  background-color: rgb(255, 255, 255, 0.5);
+  border: none;
 }

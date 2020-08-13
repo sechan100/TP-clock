@@ -1,4 +1,4 @@
-const namebox = document.querySelector('input');
+const namebox = document.querySelector('#namebox');
 const hellobox1 = document.querySelector('#hello1');
 const logout = document.querySelector('#logout')
 const CU = "current User";
@@ -10,6 +10,7 @@ function askName() {
     namebox.classList.remove('none');
     logout.classList.add('none');
     hellobox1.classList.add('none');
+    hellobox1.style.display="none";
     namebox.addEventListener('keyup',submit);
 };
 
@@ -24,19 +25,18 @@ function submit(e) {
 };
 
 function savename(n) {
-    // 2-1-2 이름을 localStorage에 
-    // 저장하고 greeting실행
+    // 2-1-2 이름을 localStorage에 저장
     localStorage.setItem(CU, n);
 };
 
 
 function greeting(name) {
-    // 2-2. 이름 묻는 인풋을 없애고 인사말을 출현시킴
-    const currentU = localStorage.getItem(CU);
+    // 2-2. 이름 묻는 인풋을 없애고 text를 나타냄
     namebox.classList.add('none');
     hellobox1.classList.remove('none');
     logout.classList.remove('none');
     hellobox1.innerText= `Hello, ${name}`;
+    hellobox1.style.display="inline";
     logout.addEventListener('click', logoutBtn);
 };
 
@@ -44,6 +44,7 @@ function logoutBtn() {
     // 3-1. logout butto을 누르면 akkName함수 실행과 함께
     // localStorage의 currentUser 삭제
     localStorage.removeItem("current User");
+    namebox.value = "";
     askName();
 };
 
@@ -64,6 +65,5 @@ function loadName() {
 
 function init() {   
     loadName();
-    logoutBtn();
 }
 init();
