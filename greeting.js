@@ -45,6 +45,7 @@ function logoutBtn() {
     // localStorage의 currentUser 삭제
     localStorage.removeItem("current User");
     namebox.value = "";
+    logout.style.cursor = "pointer";
     askName();
 };
 
