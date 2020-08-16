@@ -19,6 +19,6 @@ function time(){
 };
 
 function Doingtime(){
-    setInterval(time, 1000);
+    setInterval(time, 300);
 }
 Doingtime()

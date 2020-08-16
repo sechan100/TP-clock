@@ -6,7 +6,7 @@ var TDarray = [];
 
 function handleSubmit(e){
     // 2-1. 사용자가 누른 키가 enter라면, save_paint_Todo 함수실행
-    if(e.keyCode === 13){
+    if(e.keyCode === 13 && todoText.value !== ""){
         const text = todoText.value;
         save_paint_Todo(text);
     };
@@ -27,19 +27,26 @@ function loadTodo() {
 function save_paint_Todo(t){
     // 3. 작성한 todolist의 내용을 화면에 list로 만들고 TDarray에 저장
     // 3-1 todoList 화면에 li로 출력
+    todoText.value ="";
     const li = document.createElement("li");  
+    const addIdType = TDarray.length+1; // TDarray의 object수 +1만큼 id할당
     const delBtn = document.createElement("button")
     delBtn.innerText = "❌";
     delBtn.classList.add("delBtn");
-    delBtn.addEventListener('click' , deletelist);//delBtn 클릭시 삭제 함수 실행
+    delBtn.classList.add("none");
+    delBtn.addEventListener('click' , deletelist)
+    
+    
     const span = document.createElement("span");
-    const addIdType = TDarray.length+1; // TDarray의 object수 +1만큼 id할당
+    span.style.cursor = "default";
+    span.addEventListener('mouseover' , showdelBtn);
+    span.addEventListener('mouseout' , nonedelBtn);
+    
     span.innerText = t;
     li.id = addIdType;
-    li.appendChild(span);
     li.appendChild(delBtn);
+    li.appendChild(span);
     todoList.appendChild(li);
-    todoText.value = "";
     
     
     // 3-2. todolist를 array로 TDarray에 저장 후 save_LS함수 실행
@@ -56,6 +63,37 @@ function save_LS() {
     localStorage.setItem(TD, JSON.stringify(TDarray)); 
     //TDarray를 localStorage에 string으로 저장
     
+};
+
+function showdelBtn(e){
+    const t = e.target;
+    const B = t.previousSibling;
+    t.style.backgroundColor = "rgb(255, 255, 255, 0.3)";
+    B.classList.remove('none');
+    B.addEventListener('mouseover' , showdelBtn_2);
+
+};
+
+function showdelBtn_2(e) {
+    const B = e.target;
+    const t = B.nextSibling;
+    B.classList.remove('none');
+    t.style.backgroundColor = "rgb(255, 255, 255, 0.3)";
+};
+
+function nonedelBtn(e) {
+    const t = e.target;
+    const B = t.previousSibling;
+    t.style.backgroundColor = "";
+    B.classList.add('none');
+    B.addEventListener('mouseout' , nonedelBtn_2);
+};
+
+function nonedelBtn_2(e) {
+    const B = e.target;
+    const t = B. nextSibling;
+    B.classList.add('none');
+    t.style.backgroundColor = "";
 };
 
 function deletelist(event){
