@@ -61,6 +61,8 @@ h2 {
   height: 30px;
   margin-left: 0px;
   border-radius: 12px;
+  outline: none;
+  cursor: pointer;
   animation: fadeIn 1.5s;
 }
 #todoinput {
@@ -98,6 +100,23 @@ span {
   font-size: 20px;
   background-color: rgb(255, 255, 255, 0);
   border: none;
+}
+#bg_Btn {
+  background-color: rgb(88, 193, 197, 0.7);
+  color: white;
+  position: static;
+  text-align: start;
+  height: 30px;
+  border: 1px solid rgb(0, 0, 0, 0.5);
+  font-size: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: 0px;
+  margin-top: 10px;
+  border-radius: 5px;
+  animation: fadeIn 1.5s;
+  cursor: pointer;
+  outline: none;
 }
 .checkBox {
   width: 28px;
