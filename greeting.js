@@ -10,6 +10,8 @@ function askName() {
     namebox.classList.remove('none');
     logout.classList.add('none');
     hellobox1.classList.add('none');
+    todoinput.classList.add('none');
+    ask_name.classList.remove("none");
     hellobox1.style.display="none";
     namebox.addEventListener('keyup',submit);
 };
@@ -33,8 +35,10 @@ function savename(n) {
 function greeting(name) {
     // 2-2. 이름 묻는 인풋을 없애고 text를 나타냄
     namebox.classList.add('none');
+    ask_name.classList.add("none");
     hellobox1.classList.remove('none');
     logout.classList.remove('none');
+    todoinput.classList.remove('none');
     hellobox1.innerText= `Hello, ${name}`;
     hellobox1.style.display="inline";
     logout.addEventListener('click', logoutBtn);
