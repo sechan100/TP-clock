@@ -24,23 +24,17 @@ function handle_bg() {
 
 function paint_other_Img() {
     const bg = document.querySelector('.bgimage')
-    var i = "none";
-    while(i !== bg.id){
+    var ran_id= "none";
+    for(let i = bg.id; i !== ran_id;){
         const random_N = genRandom();
-        genRandom()
-        body.removeChild(bg);
-        if(random_N !== bg.id){
-            const img = new Image();
-            const random_N = genRandom();
-            img.src = `img/${random_N}.webp`;
-            body.appendChild(img);
-            img.id = `bg${random_N}`;
-            img.classList.add("bgimage")
-            i = `bg${random_N}`
-        }else{
-            i = "none";
-        };
+        var ran_id = `bg${random_N}`
+        genRandom();
     };
+    const img = new Image();
+    img.src = `img/${random_N}.webp`;
+    body.appendChild(img);
+    img.id = `bg${random_N}`;
+    img.classList.add("bgimage")
 };
 
 
